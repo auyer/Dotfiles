@@ -1,24 +1,16 @@
 # .bashrc
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin
+export TERM=xterm-256color
+# Powerline-go
+function _update_ps1() {
+    PS1="$(~/go/bin/powerline-go -error $?)"
+}
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+if [ "$TERM" != "linux" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-
-export TERMINAL="gnome-terminal"
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/golangws
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-export proxy="http://10.30.0.10:3128"
-alias go='http_proxy=$proxy go'
-alias pip='pip --proxy="http://10.30.0.10:3128" '
-alias pip3='pip3 --proxy="http://10.30.0.10:3128" '
-alias mix='HTTP_PROXY=$proxy mix'
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Source global definitions
+export TERMINAL="termite"
