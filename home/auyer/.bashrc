@@ -173,4 +173,6 @@ if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+setxkbmap -model pc104 -layout us_intl
+
 alias pbcopy='xsel --clipboard --input'
