@@ -1,0 +1,38 @@
+brew install \
+awscli \
+ccat \
+circleci \
+docker-compose \
+go \
+gotop \
+htop \
+neovim \
+node \
+terraform \
+yarn \
+
+
+
+# Brew Cask Install
+brew cask install \
+anaconda \
+atom \
+brave-browser \
+docker \
+drawio \
+insomnia \
+iterm2 \
+keepingyouawake \
+krita \
+libreoffice \
+macs-fan-control \
+nomachine \
+slack \
+spotify \
+telegram \ 
+vscodium \
+whatsapp
+
+
+# Cleanup
+brew cleanup
