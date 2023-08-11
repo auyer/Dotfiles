@@ -17,7 +17,8 @@ SAVEHIST=100000
 setopt autocd extendedglob
 # End of lines configured by zsh-newuser-install
 
-
+export EDITOR=vim
+export VISUAL=vim
 
 source $HOME/.cargo/env
 
