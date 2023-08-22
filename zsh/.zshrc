@@ -15,6 +15,14 @@ HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
 setopt autocd extendedglob
+
+#setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+#setopt HIST_IGNORE_ALL_DUPS
+#setopt HIST_IGNORE_SPACE
+#setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 # End of lines configured by zsh-newuser-install
 
 export EDITOR=vim
@@ -25,8 +33,9 @@ source $HOME/.cargo/env
 export PATH=$PATH:/home/auyer/go/bin:/home/auyer/work/bin
 export PATH="$PATH:${HOME}/.local/bin"
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+source /usr/share/nvm/init-nvm.sh
+#export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
 export PYENV_ROOT="$HOME/.pyenv"
