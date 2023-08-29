@@ -1,32 +1,90 @@
+#------------------------------
+# History stuff
+#------------------------------
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
 
-# The following lines were added by compinstall
+#-----------------------------
+# Dircolors
+#-----------------------------
+LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
+export LS_COLORS
 
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' menu select=1
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/auyer/.zshrc'
+#------------------------------
+# Keybindings
+#------------------------------
+bindkey -v
+typeset -g -A key
+bindkey '^?' backward-delete-char
+bindkey '^[[5~' up-line-or-history
+bindkey '^[[3~' delete-char
+bindkey '^[[6~' down-line-or-history
+bindkey '^[[A' up-line-or-search
+bindkey '^[[D' backward-char
+bindkey '^[[B' down-line-or-search
+bindkey '^[[C' forward-char 
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
+#------------------------------
+# Alias stuff
+#------------------------------
+alias ls="ls --color -F"
+alias ll="ls --color -lh"
+alias spm="sudo pacman"
+alias gr="gvim --remote-silent"
+alias vr="vim --remote-silent"
+
+#------------------------------
+# ShellFuncs
+#------------------------------
+# -- coloured manuals
+man() {
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+    man "$@"
+}
+
+#------------------------------
+# Comp stuff
+#------------------------------
+zmodload zsh/complist 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=100000
-SAVEHIST=100000
-setopt autocd extendedglob
+zstyle :compinstall filename '${HOME}/.zshrc'
 
-#setopt HIST_EXPIRE_DUPS_FIRST
-setopt HIST_IGNORE_DUPS
-#setopt HIST_IGNORE_ALL_DUPS
-#setopt HIST_IGNORE_SPACE
-#setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
+#- buggy
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+#-/buggy
 
-# End of lines configured by zsh-newuser-install
+zstyle ':completion:*:pacman:*' force-list always
+zstyle ':completion:*:*:pacman:*' menu yes select
 
-export EDITOR=vim
-export VISUAL=vim
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*'   force-list always
+
+zstyle ':completion:*:*:killall:*' menu yes select
+zstyle ':completion:*:killall:*'   force-list always
+
+
+
+#------------------------------
+# Variables
+#------------------------------
+export BROWSER="firefox"
+export EDITOR="nvim"
+export VISUAL=nvim
+export GOPATH="$HOME/go"
 
 source $HOME/.cargo/env
 
