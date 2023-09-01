@@ -9,6 +9,11 @@ Clone into your `$HOME` directory or `~`
 Run `stow` to symlink everything or just select what you want
 
 ```bash
+stow lvim -t ~ # creates symlinks for lvim configs
+```
+
+Or eveything
+```bash
 stow */ -t ~ # Everything (the '/' ignores the README)
 ```
 
