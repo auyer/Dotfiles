@@ -1,4 +1,11 @@
-lvim.lang.python.lsp.provider = nil
+-- add `pyright` to `skipped_servers` list
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
+-- remove `jedi_language_server` from `skipped_servers` list
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+  return server ~= "ruff_lsp"
+end, lvim.lsp.automatic_configuration.skipped_servers)
+
+-- lvim.lang.python.lsp.provider = nil
 require("lvim.lsp.manager").setup("ruff_lsp")
 ------------------------
 -- Treesitter
@@ -13,7 +20,7 @@ table.insert(lvim.builtin.treesitter.ensure_installed,
 ------------------------
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
-  { command = "black", filetypes = { "python" } },
+  { command = "ruff", filetypes = { "python" } },
 }
 lvim.format_on_save.enabled = true
 

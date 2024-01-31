@@ -13,5 +13,11 @@ table.insert(lvim.plugins,
 )
 
 -- Options
+lvim.builtin.dap.active = true
 vim.opt.relativenumber = true
 lvim.transparent_window = true
+lvim.builtin.terminal.active = true
+lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.treesitter.auto_install = true
+lvim.lsp.automatic_servers_installation = false
