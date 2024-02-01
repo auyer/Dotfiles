@@ -22,7 +22,6 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "ruff", filetypes = { "python" } },
 }
-lvim.format_on_save.enabled = true
 
 table.insert(lvim.format_on_save,
   {
