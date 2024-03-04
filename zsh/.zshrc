@@ -3,12 +3,7 @@
 source ~/.zsh_prompt_config
 
 
-#------------------------------
-# History stuff
-#------------------------------
-HISTFILE=~/.histfile
-HISTSIZE=20000
-SAVEHIST=20000
+
 
 #------------------------------
 # Alias stuff

@@ -1,3 +1,25 @@
+#------------------------------
+# History stuff
+#------------------------------
+HISTFILE=~/.histfile
+HISTSIZE=20000
+SAVEHIST=20000
+
+# The following lines were added by compinstall
+zstyle ':completion:*' completer _list _oldlist _expand _complete _ignored _match _correct _approximate _prefix
+zstyle :compinstall filename '/home/auyer/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+
+setopt autocd extendedglob notify
+# End of lines configured by zsh-newuser-install
+
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
 ## Options section
 setopt correct                                                  # Auto correct mistakes
 setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
