@@ -43,4 +43,6 @@ wl-clipboard
 zsh
 zsh-history-substring-search
 zsh-syntax-highlighting
+woff-fira-code
+otf-hasklig-nerd
 wezterm
