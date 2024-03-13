@@ -45,4 +45,6 @@ zsh-history-substring-search
 zsh-syntax-highlighting
 woff-fira-code
 otf-hasklig-nerd
+noto-fonts-emoji
+noto-fonts
 wezterm
