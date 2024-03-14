@@ -2,10 +2,11 @@
 
 -- load configs from files
 reload "user.go"
+reload "user.c"
 reload "user.js"
 reload "user.py"
-reload "user.copilot"
 reload "user.rust"
+reload "user.copilot"
 
 -- general plugins
 table.insert(lvim.plugins,
