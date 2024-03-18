@@ -2,9 +2,6 @@
 #
 source ~/.zsh_prompt_config
 
-
-
-
 #------------------------------
 # Alias stuff
 #------------------------------
@@ -13,6 +10,7 @@ alias ll="ls --color -lh"
 alias spm="sudo pacman"
 alias gr="gvim --remote-silent"
 alias vr="vim --remote-silent"
+alias awssso="aws sso login --no-browser"
 
 #------------------------------
 # Variables
@@ -36,9 +34,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-#[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
-
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 
 eval "$(starship init zsh)"
@@ -46,3 +42,8 @@ eval "$(starship init zsh)"
 
 #------------------------------
 source ~/.profile
+
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE=remote/ssh
+  echo Welcome from $SSH_CLIENT
+fi

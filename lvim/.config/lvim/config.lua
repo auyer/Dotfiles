@@ -10,8 +10,16 @@ reload "user.copilot"
 
 -- general plugins
 table.insert(lvim.plugins,
-  { "folke/trouble.nvim" }
+  { "folke/trouble.nvim", "ojroques/nvim-osc52" }
 )
+
+function copy()
+  if vim.v.event.operator == 'y' and vim.v.event.regname == '+' then
+    require('osc52').copy_register('+')
+  end
+end
+
+vim.api.nvim_create_autocmd('TextYankPost', { callback = copy })
 
 -- Options
 lvim.builtin.dap.active = true
@@ -22,4 +30,4 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.auto_install = true
 lvim.lsp.automatic_servers_installation = false
-lvim.format_on_save.enabled = true
+-- lvim.format_on_save.enabled = true
