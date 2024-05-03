@@ -66,6 +66,7 @@ return {
         "tsx",
         "typescript",
         "yaml",
+        "svelte",
       },
     },
   },
