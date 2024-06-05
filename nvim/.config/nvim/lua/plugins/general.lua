@@ -54,7 +54,10 @@ return {
     opts = {
       ensure_installed = {
         "bash",
+        "c",
+        "csv",
         "html",
+        "hcl",
         "javascript",
         "json",
         "lua",
@@ -66,6 +69,7 @@ return {
         "tsx",
         "typescript",
         "yaml",
+        "rst",
         "svelte",
       },
     },
