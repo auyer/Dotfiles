@@ -30,10 +30,6 @@ source /usr/share/nvm/init-nvm.sh
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 
@@ -47,3 +43,8 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   SESSION_TYPE=remote/ssh
   echo Welcome from $SSH_CLIENT
 fi
+# kw
+export fpath=(/home/auyer/.local/lib/kw $fpath)
+autoload compinit && compinit -i
+
+. "$HOME/.cargo/env"
