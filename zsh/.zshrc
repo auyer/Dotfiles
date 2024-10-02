@@ -1,6 +1,11 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+source ~/.zinitrc
+#
 # ZSH CONFIG 
 #
-source ~/.zsh_prompt_config
+#source ~/.zsh_prompt_config
+
 
 #------------------------------
 # Alias stuff
@@ -20,12 +25,10 @@ export EDITOR="nvim"
 export VISUAL=nvim
 export GOPATH="$HOME/go"
 
-source $HOME/.cargo/env
-
 export PATH=$PATH:/home/auyer/go/bin:/home/auyer/work/bin
 export PATH="$PATH:${HOME}/.local/bin"
 
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 #export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
@@ -38,13 +41,14 @@ eval "$(starship init zsh)"
 
 #------------------------------
 source ~/.profile
+source ~/.private
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   SESSION_TYPE=remote/ssh
   echo Welcome from $SSH_CLIENT
 fi
+
 # kw
 export fpath=(/home/auyer/.local/lib/kw $fpath)
 autoload compinit && compinit -i
 
-. "$HOME/.cargo/env"
