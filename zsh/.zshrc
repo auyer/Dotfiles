@@ -1,11 +1,23 @@
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#------------------------------
+source ~/.profile
+source ~/.private
 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  SESSION_TYPE=remote/ssh
+  echo Welcome from $SSH_CLIENT
+fi
+
+# brew ------------------------------
+if [[ -e /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# zinit ------------------------------
 source ~/.zinitrc
 #
 # ZSH CONFIG 
 #
 source ~/.zsh_prompt_config
-
 
 #------------------------------
 # Alias stuff
@@ -41,16 +53,6 @@ export PATH="$PATH:${HOME}/.local/bin"
 
 
 eval "$(starship init zsh)"
-
-
-#------------------------------
-source ~/.profile
-source ~/.private
-
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  SESSION_TYPE=remote/ssh
-  echo Welcome from $SSH_CLIENT
-fi
 
 # kw
 export fpath=(/home/auyer/.local/lib/kw $fpath)
