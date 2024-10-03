@@ -4,7 +4,7 @@ source ~/.zinitrc
 #
 # ZSH CONFIG 
 #
-#source ~/.zsh_prompt_config
+source ~/.zsh_prompt_config
 
 
 #------------------------------
@@ -13,9 +13,13 @@ source ~/.zinitrc
 alias ls="ls --color -F"
 alias ll="ls --color -lh"
 alias spm="sudo pacman"
-alias gr="gvim --remote-silent"
-alias vr="vim --remote-silent"
 alias awssso="aws sso login --no-browser"
+alias cp="cp -i"                                                # Confirm before overwriting something
+alias df='df -h'                                                # Human-readable sizes
+alias free='free -m'                                            # Show sizes in MB
+# alias gr="gvim --remote-silent"
+# alias vr="vim --remote-silent"
+
 
 #------------------------------
 # Variables
@@ -50,5 +54,5 @@ fi
 
 # kw
 export fpath=(/home/auyer/.local/lib/kw $fpath)
-autoload compinit && compinit -i
+# autoload compinit && compinit -i
 
