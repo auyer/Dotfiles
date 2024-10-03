@@ -21,32 +21,6 @@ zinit light-mode for \
 
 ## End of Zinit's installer chunk
 
-# A.
-
-setopt promptsubst
-
-# # B.
-# zinit wait lucid for \
-#         OMZL::git.zsh \
-#   atload"unalias grv" \
-#         OMZP::git
-#
-# PS1="READY >" # provide a simple prompt till the theme loads
-#
-# # C.
-# zinit wait'!' lucid for \
-#     OMZL::prompt_info_functions.zsh \
-#     OMZT::gnzh
-#
-# # D.
-# zinit wait lucid for \
-#   atinit"zicompinit; zicdreplay"  \
-#         zdharma-continuum/fast-syntax-highlighting \
-#       OMZP::colored-man-pages \
-#   as"completion" \
-#         OMZP::docker/_docker
-#
-
 #------------------------------
 # Zinit Plugins
 #------------------------------
@@ -60,9 +34,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 # Snippet
 zinit snippet https://gist.githubusercontent.com/hightemp/5071909/raw/
-
-# OMZ compat
-zinit snippet OMZ::plugins/git/git.plugin.zsh
 
 # zinit load zsh-users/zsh-history-substring-search
 # zinit ice wait atload'_history_substring_search_config'
