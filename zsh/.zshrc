@@ -12,6 +12,18 @@ if [[ -e /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+if [[ ! -e ~/.local/share/fonts/HasklugNerdFont-Medium.otf ]]; then
+  mkdir -p ~/.local/share/fonts/
+  cd ~/.local/share/fonts/
+  wget -qO- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hasklig.tar.xz | tar -xJf -
+fi
+
+# if [[ ! -e ~/.local/share/fonts/JetBrainsMonoNerdFont-Medium.ttf ]]; then
+#   mkdir -p ~/.local/share/fonts/
+#   cd ~/.local/share/fonts/
+#   wget -qO- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz | tar -xJf -
+# fi
+
 # zinit ------------------------------
 source ~/.zinitrc
 #
