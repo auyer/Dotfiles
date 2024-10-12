@@ -1,6 +1,7 @@
 command_not_found_handle() {
 # don't run if not in a container
   if [ ! -e /run/.containerenv ] && [ ! -e /.dockerenv ]; then
+    echo "${@}" Not Found!
     exit 127
   fi
   
