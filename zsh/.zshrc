@@ -25,6 +25,7 @@ fi
 # fi
 
 # zinit ------------------------------
+# echo "sourcing zinit"
 source ~/.zinitrc
 #
 # ZSH CONFIG 
@@ -63,10 +64,13 @@ export PATH="$PATH:${HOME}/.local/bin"
 
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
-
-eval "$(starship init zsh)"
-
 # kw
 export fpath=(/home/auyer/.local/lib/kw $fpath)
 # autoload compinit && compinit -i
 
+# RUSTUP
+. "$HOME/.cargo/env"
+
+eval "$(starship init zsh)"
+
+# echo "ZShell complete"
