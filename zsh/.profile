@@ -7,13 +7,14 @@ command_not_found_handle() {
 
   distrobox-host-exec "${@}"
 }
-if [ -n "${ZSH_VERSION-}" ]; then
-  command_not_found_handler() {
-    command_not_found_handle "$@"
-  }
-fi
 
 if [[ "${CONTAINER_ID}" ]]; then
+  if [ -n "${ZSH_VERSION-}" ]; then
+    command_not_found_handler() {
+      command_not_found_handle "$@"
+    }
+  fi
+
   # echo "In container, preparing devbox and Nix"
   if [[ ! -e /usr/local/bin/devbox ]]; then
     curl -fsSL https://get.jetify.com/devbox | bash
@@ -27,7 +28,7 @@ if [[ "${CONTAINER_ID}" ]]; then
   if ! [ -x "$(command -v rg)" ]; then
     devbox global add ripgrep
   fi
-  
+
   if ! [ -x "$(command -v starship)" ]; then
     devbox global add starship
   fi
