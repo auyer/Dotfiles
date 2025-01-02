@@ -298,3 +298,15 @@ add-zsh-hook precmd mzc_termsupport_cwd
 export LS_OPTIONS='--color=auto'
 eval "$(dircolors -b)"
 alias ls='ls $LS_OPTIONS'
+
+
+# Starship 
+if [ -x "$(command -v starship)" ]; then
+  eval "$(starship init zsh)"
+
+  zinit ice as"command" from"gh-r" \
+            atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+            atpull"%atclone" src"init.zsh"
+  zinit light starship/starship
+fi
+

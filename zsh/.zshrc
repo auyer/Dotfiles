@@ -71,6 +71,4 @@ export fpath=(/home/auyer/.local/lib/kw $fpath)
 # RUSTUP
 . "$HOME/.cargo/env"
 
-eval "$(starship init zsh)"
-
 # echo "ZShell complete"

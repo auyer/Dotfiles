@@ -26,7 +26,7 @@ if [[ "${CONTAINER_ID}" ]]; then
   eval "$(devbox global shellenv --init-hook)"
 
   if ! [ -x "$(command -v rg)" ]; then
-    devbox global add ripgrep
+    devbox global add ripgrep awscliv2
   fi
 
   if ! [ -x "$(command -v starship)" ]; then
