@@ -27,10 +27,6 @@ fi
 # zinit ------------------------------
 # echo "sourcing zinit"
 source ~/.zinitrc
-#
-# ZSH CONFIG 
-#
-source ~/.zsh_prompt_config
 
 #------------------------------
 # Alias stuff
@@ -72,3 +68,14 @@ export fpath=(/home/auyer/.local/lib/kw $fpath)
 . "$HOME/.cargo/env"
 
 # echo "ZShell complete"
+
+# if [ -e /var/home/auyer/.nix-profile/etc/profile.d/nix.sh ]; then . /var/home/auyer/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# export fpath=(/var/home/auyer/.local/lib/kw $fpath)
+# autoload compinit && compinit -i
+
+#
+#
+# ZSH CONFIG 
+#
+source ~/.zsh_prompt_config
+
