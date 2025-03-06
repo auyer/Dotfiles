@@ -2,6 +2,12 @@
 source ~/.profile
 source ~/.private
 
+#
+#
+# ZSH CONFIG 
+#
+source ~/.zsh_prompt_config
+
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   SESSION_TYPE=remote/ssh
   echo Welcome from $SSH_CLIENT
@@ -72,10 +78,4 @@ export fpath=(/home/auyer/.local/lib/kw $fpath)
 # if [ -e /var/home/auyer/.nix-profile/etc/profile.d/nix.sh ]; then . /var/home/auyer/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 # export fpath=(/var/home/auyer/.local/lib/kw $fpath)
 # autoload compinit && compinit -i
-
-#
-#
-# ZSH CONFIG 
-#
-source ~/.zsh_prompt_config
-
+export PATH="$PATH:${HOME}/.local/bin"
