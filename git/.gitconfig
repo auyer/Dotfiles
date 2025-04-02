@@ -13,6 +13,25 @@
 [alias]
   c = commit -s
   rbo = rebase origin/main
+  port = "!f(){ \
+      git stash -u && \
+      git checkout $1 && \
+      git stash pop; \
+    }; f" 
+    # port unstaged to a new base 
+  ss = "!f(){ git show stash@{${1:-1}}; }; f" # show stash with number or last by default
+  ss1 = show stash@{1} # same as above but fixed to the last one
+  slog = log --pretty=format:'%C(auto)%h %C(red)%as %C(blue)%aN%C(auto)%d%C(green) %s'
+  ghremote = "!f(){ git remote add $1 https://github.com/$2.git; }; f" # add remote $2 with name $1
+    continue = "!f() { \
+        repo_path=$(git rev-parse --git-dir) && \
+        [ -d \"${repo_path}/rebase-merge\" ] && git rebase --continue && return; \
+        [ -d \"${repo_path}/rebase-apply\" ] && git rebase --continue && return; \
+        [ -f \"${repo_path}/MERGE_HEAD\" ] && git merge --continue && return; \
+        [ -f \"${repo_path}/CHERRY_PICK_HEAD\" ] && git cherry-pick --continue && return; \
+        [ -f \"${repo_path}/REVERT_HEAD\" ] && git revert --continue && return; \
+        echo \"Nothing to continue?\"; \
+    }; f"
 [interactive]
     diffFilter = delta --color-only
 [delta]
