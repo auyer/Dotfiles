@@ -10,7 +10,7 @@
 	autoSetupRemote = true
 [core]
   editor = nvim
-  pager = delta
+	pager = delta
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [alias]
@@ -36,14 +36,14 @@
         echo \"Nothing to continue?\"; \
     }; f"
 [interactive]
-    diffFilter = delta --color-only
+	diffFilter = delta --color-only
 [delta]
-    navigate = true    # use n and N to move between diff sections
+	navigate = true
     # delta detects terminal colors automatically; set one of these to disable auto-detection
     # dark = true
     # light = true
 [merge]
-    conflictstyle = zdiff3
+	conflictStyle = zdiff3
 [include]
   path = ~/.gitconfig-mail
 [includeIf "gitdir:~/work/"]
