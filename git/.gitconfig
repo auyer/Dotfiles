@@ -3,6 +3,9 @@
 [user]
 	email = rafael@rcpassos.me
 	name = Rafael Passos
+	signingkey = /home/auyer/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
 [push]
 	autoSetupRemote = true
 [core]
