@@ -48,3 +48,7 @@
   path = ~/.gitconfig-mail
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-work
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
