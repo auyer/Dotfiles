@@ -5,3 +5,5 @@
 vim.g.lazyvim_python_lsp = "ruff"
 vim.opt.signcolumn = "yes"
 vim.g.autoformat = false
+vim.opt.wrap = true
+vim.opt.expandtab = false
