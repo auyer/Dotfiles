@@ -15,6 +15,7 @@
 	insteadOf = https://github.com/
 [alias]
   c = commit -s
+  ca = commit -s --amend
   rbo = rebase origin/main
   port = "!f(){ \
       git stash -u && \
