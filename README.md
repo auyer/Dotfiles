@@ -9,7 +9,7 @@ Clone into your `$HOME` directory or `~`
 Run `stow` to symlink everything or just select what you want
 
 ```bash
-stow lvim -t ~ # creates symlinks for lvim configs
+stow nvim -t ~ # creates symlinks for nvim configs
 ```
 
 Or eveything
