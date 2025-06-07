@@ -19,8 +19,8 @@ if [[ "${CONTAINER_ID}" ]]; then
   if [[ ! -e /usr/local/bin/devbox ]]; then
     curl -fsSL https://get.jetify.com/devbox | bash
   fi
-  if [[ -e /var/home/auyer/.nix-profile/etc/profile.d/nix.sh ]]; then
-    source /var/home/auyer/.nix-profile/etc/profile.d/nix.sh
+  if [[ -e /home/auyer/.nix-profile/etc/profile.d/nix.sh ]]; then
+    source /home/auyer/.nix-profile/etc/profile.d/nix.sh
   fi
 
   eval "$(devbox global shellenv --init-hook)"
