@@ -8,9 +8,14 @@ SAVEHIST=20000
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _list _oldlist _expand _complete _ignored _match _correct _approximate _prefix
 zstyle :compinstall filename '/home/auyer/.zshrc'
-#
-autoload -Uz compinit
-compinit
+
+# autoload -Uz compinit
+# compinit
+autoload -U compinit colors zcalc
+compinit -d
+colors
+
+
 # End of lines added by compinstall
 
 # Lines configured by zsh-newuser-install
@@ -73,11 +78,6 @@ bindkey '^[[6~' history-beginning-search-forward                # Page down key
 # bindkey '^[[1;5C' forward-word                                  #
 # bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
 # bindkey '^[[Z' undo                                             # Shift+tab undo last action
-
-# Theming section  
-autoload -U compinit colors zcalc
-compinit -d
-colors
 
 # Color man pages
 export LESS_TERMCAP_mb=$'\E[01;32m'
@@ -303,10 +303,5 @@ alias ls='ls $LS_OPTIONS'
 # Starship 
 if [ -x "$(command -v starship)" ]; then
   eval "$(starship init zsh)"
-
-  # zinit ice as"command" from"gh-r" \
-  #           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-  #           atpull"%atclone" src"init.zsh"
-  # zinit light starship/starship
 fi
 
