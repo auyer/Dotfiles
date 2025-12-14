@@ -5,7 +5,7 @@ source ~/.profile
 source ~/.private
 
 #
-# ZSH CONFIG 
+# ZSH CONFIG
 #
 source ~/.zsh_prompt_config
 
