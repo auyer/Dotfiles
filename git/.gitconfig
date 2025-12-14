@@ -10,7 +10,6 @@
 	autoSetupRemote = true
 [core]
   editor = nvim
-	pager = delta
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [alias]
@@ -36,13 +35,6 @@
         [ -f \"${repo_path}/REVERT_HEAD\" ] && git revert --continue && return; \
         echo \"Nothing to continue?\"; \
     }; f"
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	navigate = true
-    # delta detects terminal colors automatically; set one of these to disable auto-detection
-    # dark = true
-    # light = true
 [merge]
 	conflictStyle = zdiff3
 [include]
