@@ -35,8 +35,6 @@
         [ -f \"${repo_path}/REVERT_HEAD\" ] && git revert --continue && return; \
         echo \"Nothing to continue?\"; \
     }; f"
-[merge]
-	conflictStyle = zdiff3
 [include]
   path = ~/.gitconfig-mail
 [includeIf "gitdir:~/work/"]
