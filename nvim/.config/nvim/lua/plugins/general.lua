@@ -127,6 +127,9 @@ return {
         "yaml",
         "rst",
         "svelte",
+        "latex",
+        "bibtex",
+        "go",
 
         -- "go", "gomod", "gowork", "gosum"
       },
