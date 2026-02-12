@@ -20,4 +20,8 @@ if [ -n "${CONTAINER_ID+set}" ]; then
 	refresh-global
 fi
 
+export PATH=$PATH:/home/auyer/go/bin:/home/auyer/work/bin
+export PATH="$PATH:${HOME}/.local/bin"
+export PATH="$PATH:${HOME}/bin"
+
 eval "$(devbox global shellenv --init-hook)"

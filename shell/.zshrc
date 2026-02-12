@@ -56,9 +56,6 @@ export EDITOR="nvim"
 export VISUAL=nvim
 export GOPATH="$HOME/go"
 
-export PATH=$PATH:/home/auyer/go/bin:/home/auyer/work/bin
-export PATH="$PATH:${HOME}/.local/bin"
-
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 # kw
@@ -74,3 +71,4 @@ export PATH="$PATH:${HOME}/.local/bin"
 eval "$(devbox global shellenv)"
 
 # zprof
+autoload compinit && compinit -i

@@ -52,9 +52,6 @@ export EDITOR="nvim"
 export VISUAL=nvim
 export GOPATH="$HOME/go"
 
-export PATH=$PATH:/home/auyer/go/bin:/home/auyer/work/bin
-export PATH="$PATH:${HOME}/.local/bin"
-
 # kw
 source /home/auyer/.local/lib/kw/bash_autocomplete.sh
 source /home/auyer/.config/kw/kw_prompt_current_env_name.sh
