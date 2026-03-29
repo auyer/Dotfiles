@@ -72,3 +72,10 @@ eval "$(devbox global shellenv)"
 
 # zprof
 autoload compinit && compinit -i
+
+# agentbox begin
+export PATH="${HOME}/.local/bin/agentbox:${PATH}"
+# agentbox end
+
+# agentbox completion
+source "${HOME}/.local/bin/agentbox/agentbox.completion"
