@@ -36,19 +36,6 @@ fi
 source ~/.zinitrc
 
 #------------------------------
-# Alias stuff
-#------------------------------
-alias ls="ls --color -F"
-alias ll="ls --color -lh"
-alias spm="sudo pacman"
-alias awssso="aws sso login --no-browser"
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
-alias g='git'
-alias gi='git'
-
-#------------------------------
 # Variables
 #------------------------------
 export BROWSER="firefox"

@@ -25,3 +25,17 @@ export PATH="$PATH:${HOME}/.local/bin"
 export PATH="$PATH:${HOME}/bin"
 
 eval "$(devbox global shellenv --init-hook)"
+
+#------------------------------
+# Alias stuff
+#------------------------------
+alias ls="ls --color -F"
+alias ll="ls --color -lh"
+alias spm="sudo pacman"
+alias awssso="aws sso login --no-browser"
+alias cp="cp -i"     # Confirm before overwriting something
+alias df='df -h'     # Human-readable sizes
+alias free='free -m' # Show sizes in MB
+alias g='git'
+alias gi='git'
+alias lz='lazygit'
