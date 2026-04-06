@@ -39,3 +39,6 @@ alias free='free -m' # Show sizes in MB
 alias g='git'
 alias gi='git'
 alias lz='lazygit'
+#=======
+
+. "$HOME/.cargo/env"
