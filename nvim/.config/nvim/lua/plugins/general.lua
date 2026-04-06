@@ -130,6 +130,8 @@ return {
         "latex",
         "bibtex",
         "go",
+        "rust",
+        "ron",
 
         -- "go", "gomod", "gowork", "gosum"
       },
