@@ -1,12 +1,14 @@
+# Source nix profile
+if [[ -e /home/auyer/.nix-profile/etc/profile.d/nix.sh ]]; then
+	source /home/auyer/.nix-profile/etc/profile.d/nix.sh
+fi
+
+if [[ ! -e /usr/local/bin/devbox ]]; then
+	curl -fsSL https://get.jetify.com/devbox | bash
+fi
+
 if [ -n "${CONTAINER_ID+set}" ]; then
 	# echo "In container, preparing devbox and Nix"
-	if [[ ! -e /usr/local/bin/devbox ]]; then
-		curl -fsSL https://get.jetify.com/devbox | bash
-	fi
-	if [[ -e /home/auyer/.nix-profile/etc/profile.d/nix.sh ]]; then
-		source /home/auyer/.nix-profile/etc/profile.d/nix.sh
-	fi
-
 	eval "$(devbox global shellenv --init-hook)"
 
 	if ! [ -x "$(command -v rg)" ]; then
