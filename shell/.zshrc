@@ -1,6 +1,3 @@
-parent_cmd=$(tr '\0' ' ' < /proc/$PPID/cmdline)
-echo "This script .zshrc was called by: $parent_cmd"
-
 # for profiling
 # zmodload zsh/zprof
 #------------------------------
