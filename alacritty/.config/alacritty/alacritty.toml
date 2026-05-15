@@ -3,6 +3,9 @@ import = [
   "~/.config/alacritty/dank-theme.toml"
 ]
 
+[terminal]
+ osc52 = "CopyPaste"
+
 [window]
 decorations = "None"
 padding = { x = 12, y = 12 }
