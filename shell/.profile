@@ -45,6 +45,7 @@ alias free='free -m' # Show sizes in MB
 alias g='git'
 alias gi='git'
 alias lz='lazygit'
+alias wget='wcurl'
 
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 . /usr/share/bash-completion/completions/quilt
@@ -69,6 +70,7 @@ source /home/auyer/.local/lib/kw/bash_autocomplete.sh
 source /home/auyer/.config/kw/kw_prompt_current_env_name.sh
 
 export PATH="$PATH:${HOME}/.local/bin"
+export MANPAGER="nvim +Man!"
 
 # agentbox completion
 source "${HOME}/.local/bin/agentbox/agentbox.completion"
