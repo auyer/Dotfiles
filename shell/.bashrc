@@ -8,8 +8,7 @@ HISTFILE=~/.histfile
 HISTSIZE=20000
 SAVEHIST=20000
 
-# source ~/.profile
-source ~/.private
+source ~/.profile
 
 # Starship 
 if [ -x "$(command -v starship)" ]; then

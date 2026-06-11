@@ -2,21 +2,6 @@ if [[ ! -e /usr/local/bin/devbox ]]; then
     curl -fsSL https://get.jetify.com/devbox | bash
 fi
 
-if [ -n "${CONTAINER_ID+set}" ]; then
-    # echo "In container, preparing devbox and Nix"
-    eval "$(devbox global shellenv --init-hook)"
-
-    # if ! [ -x "$(command -v rg)" ]; then
-    #     devbox global add ripgrep awscli2 fzf
-    # fi
-
-    if ! [ -x "$(command -v starship)" ]; then
-        devbox global add starship
-    fi
-
-    refresh-global
-fi
-
 # brew ------------------------------
 if [[ -e /home/linuxbrew/.linuxbrew/bin/brew ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -27,9 +12,9 @@ export PATH="$PATH:${HOME}/.local/bin"
 export PATH="$PATH:${HOME}/bin"
 
 if [[ ! -e ~/.local/share/fonts/HasklugNerdFont-Medium.otf ]]; then
-	mkdir -p ~/.local/share/fonts/
-	cd ~/.local/share/fonts/
-	wget -qO- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hasklig.tar.xz | tar -xJf -
+    mkdir -p ~/.local/share/fonts/
+    cd ~/.local/share/fonts/
+    wget -qO- https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Hasklig.tar.xz | tar -xJf -
 fi
 
 #------------------------------
@@ -61,7 +46,6 @@ export EDITOR="nvim"
 export VISUAL=nvim
 export GOPATH="$HOME/go"
 
-
 # RUSTUP
 . "$HOME/.cargo/env"
 
@@ -79,3 +63,6 @@ export PATH="$PATH:/home/auyer/.local/bin"
 # agentbox end
 
 eval "$(devbox global shellenv)"
+
+# load private envs
+source ~/.private

@@ -1,8 +1,7 @@
 # for profiling
 # zmodload zsh/zprof
 #------------------------------
-# source ~/.profile
-source ~/.private
+source ~/.profile
 
 #
 # ZSH CONFIG
