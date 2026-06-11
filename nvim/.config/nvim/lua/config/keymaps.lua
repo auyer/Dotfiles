@@ -17,3 +17,11 @@ vim.keymap.del("n", "<leader>l")
 -- vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
 -- vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 -- vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+-- LaTeX visual wrappers
+vim.keymap.set("v", "<leader>tit", 'c\\textit{<C-r>"}<Esc>', { desc = "LaTeX \\textit{}" })
+vim.keymap.set("v", "<leader>ttt", 'c\\texttt{<C-r>"}<Esc>', { desc = "LaTeX \\texttt{}" })
+vim.keymap.set("v", "<leader>tbf", 'c\\textbf{<C-r>"}<Esc>', { desc = "LaTeX \\textbf{}" })
+-- Cscope
+vim.keymap.set({ "n", "v" }, "<C-c><C-g>", "<cmd>CsPrompt g<cr>")
+vim.keymap.set({ "n", "v" }, "<C-c><C-g>", "<cmd>Cs f g<cr>")
+--
