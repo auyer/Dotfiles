@@ -32,6 +32,11 @@ alias gi='git'
 alias lz='lazygit'
 alias wget='wcurl'
 
+# Alias ssh only when using Alacritty
+if [ "$TERM" = "alacritty" ]; then
+    alias ssh='TERM=screen-256color ssh'
+fi
+
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 . /usr/share/bash-completion/completions/quilt
 complete -F _quilt_completion -o filenames dquilt
