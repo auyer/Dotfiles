@@ -17,6 +17,10 @@ return {
         commented = true, -- Show virtual text alongside comment
       })
 
+      dap.adapters.codelldb = {
+        type = "executable",
+        command = "codelldb", -- or if not in $PATH: "/absolute/path/to/codelldb"
+      }
       dap_python.setup("uv")
 
       vim.fn.sign_define("DapBreakpoint", {
