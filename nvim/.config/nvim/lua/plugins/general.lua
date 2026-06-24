@@ -197,4 +197,22 @@ return {
       vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
     end,
   },
+  {
+    -- "languagetool.nvim",
+    -- dev = true,
+    "auyer/languagetool.nvim",
+    opts = {
+      server_url = "http://lt.rcpassos.lan/",
+      language = "auto",
+      level = "picky",
+    },
+    keys = {
+      { "<leader>lc", "<cmd>LTCheck<cr>", desc = "Check line" },
+      { "<leader>lc", ":LTCheck<cr>", mode = "v", desc = "Check selection" },
+      { "<leader>lb", "<cmd>LTCheckBuffer<cr>", desc = "Check buffer" },
+      { "<leader>lf", "<cmd>LTFix<cr>", desc = "Show fixes" },
+      { "<leader>la", "<cmd>LTCodeAction<cr>", desc = "Code action" },
+      { "<leader>lx", "<cmd>LTClear<cr>", desc = "Clear diagnostics" },
+    },
+  },
 }
