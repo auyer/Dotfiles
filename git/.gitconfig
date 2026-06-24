@@ -3,9 +3,9 @@
 [user]
 	email = rafael@rcpassos.me
 	name = Rafael Passos
-	signingkey = /home/auyer/.ssh/id_ed25519.pub
-[gpg]
-	format = ssh
+	signingkey = CE7E99316623DA3A
+; [gpg]
+	; format = ssh
 [push]
 	autoSetupRemote = true
 [core]
@@ -45,3 +45,5 @@
 	gpgSign = true
 [init]
 	defaultBranch = main
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
