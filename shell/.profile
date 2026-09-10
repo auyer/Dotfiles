@@ -50,6 +50,7 @@ export BROWSER="firefox"
 export EDITOR="nvim"
 export VISUAL=nvim
 export GOPATH="$HOME/go"
+export TMPDIR="/var/tmp"
 
 # RUSTUP
 . "$HOME/.cargo/env"
@@ -66,8 +67,24 @@ source "${HOME}/.local/bin/agentbox/agentbox.completion"
 export PATH="$PATH:/home/auyer/.local/bin"
 # export PATH="${HOME}/.local/bin/agentbox:${PATH}"
 # agentbox end
+#
+
+# cat as binary bitmask
+catb() {
+    if [[ -z "$1" ]]; then
+        echo "Usage: catb /path/to/file" >&2
+        return 1
+    fi
+
+    printf "0b%08d\n" "$(echo "obase=2; $(cat "$1")" | bc)"
+}
 
 eval "$(devbox global shellenv)"
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/home/auyer/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
 
 # load private envs
 source ~/.private
