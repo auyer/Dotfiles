@@ -15,3 +15,4 @@ if [ -x "$(command -v starship)" ]; then
   eval "$(starship init bash)"
 fi
 
+eval "$(direnv hook bash)"

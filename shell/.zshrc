@@ -11,7 +11,7 @@ source ~/.zsh_prompt_config
 
 # zinit ------------------------------
 # echo "sourcing zinit"
-source ~/.zinitrc
+# source ~/.zinitrc
 
 
 # kw
@@ -26,3 +26,5 @@ if [ -x "$(command -v starship)" ]; then
   eval "$(starship init zsh)"
 fi
 
+
+eval "$(direnv hook zsh)"
