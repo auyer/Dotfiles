@@ -53,18 +53,29 @@ export GOPATH="$HOME/go"
 export TMPDIR="/var/tmp"
 
 # RUSTUP
-. "$HOME/.cargo/env"
+if [[ -e "$HOME/.cargo/env" ]]; then
+    . "$HOME/.cargo/env"
+fi
 
 # kw
-source /home/auyer/.local/lib/kw/bash_autocomplete.sh
-source /home/auyer/.config/kw/kw_prompt_current_env_name.sh
+if [[ -e /home/auyer/.local/lib/kw/bash_autocomplete.sh ]]; then
+    source /home/auyer/.local/lib/kw/bash_autocomplete.sh
+    source /home/auyer/.config/kw/kw_prompt_current_env_name.sh
+fi
 
 export PATH="$PATH:${HOME}/.local/bin"
 export MANPAGER="nvim +Man!"
 
+# conditionally load direnv
+if [ -x "$(command -v direnv)" ]; then
+    eval "$(direnv hook bash)"
+fi
+
 # agentbox completion
-source "${HOME}/.local/bin/agentbox/agentbox.completion"
-export PATH="$PATH:/home/auyer/.local/bin"
+if [[ -e "${HOME}/.local/bin/agentbox/agentbox.completion" ]]; then
+    source "${HOME}/.local/bin/agentbox/agentbox.completion"
+    export PATH="$PATH:/home/auyer/.local/bin"
+fi
 # export PATH="${HOME}/.local/bin/agentbox:${PATH}"
 # agentbox end
 #
