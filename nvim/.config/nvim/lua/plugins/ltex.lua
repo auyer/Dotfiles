@@ -4,7 +4,7 @@
 return {
   "barreiroleo/ltex_extra.nvim",
   dependencies = { "neovim/nvim-lspconfig" },
-	event = { "LspAttach *.md", "LspAttach *.tex", "LspAttach *.sty" },
+  event = { "LspAttach *.md", "LspAttach *.tex", "LspAttach *.sty" },
 
   opts = {
     load_langs = { "en-US", "pt-BR" },
@@ -22,26 +22,26 @@ return {
       settings = {
         ltex = {
           languageToolHttpServerUri = "http://lt.rcpassos.lan/",
-          checkFrequency = 'save',
-          language = 'en-US',       -- default language
-					additionalRules = {
-						enablePickyRules = true,
-						-- motherTongue = "pt-BR",
-					},
+          checkFrequency = "save",
+          language = "en-US", -- default language
+          additionalRules = {
+            enablePickyRules = true,
+            -- motherTongue = "pt-BR",
+          },
           enabled = {
-						'markdown',
-						'plaintex',
-						'rst',
-						'tex',
-						'latex',
-						"bib",
+            "markdown",
+            "plaintex",
+            "rst",
+            "tex",
+            "latex",
+            "bib",
             "gitcommit",
             "mail",
             "norg",
             "org",
             "pandoc",
             "text",
-					},
+          },
         },
       },
     })
