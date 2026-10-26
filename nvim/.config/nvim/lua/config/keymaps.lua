@@ -25,3 +25,6 @@ vim.keymap.set("v", "<leader>tbf", 'c\\textbf{<C-r>"}<Esc>', { desc = "LaTeX \\t
 vim.keymap.set({ "n", "v" }, "<C-c><C-g>", "<cmd>CsPrompt g<cr>")
 vim.keymap.set({ "n", "v" }, "<C-c><C-g>", "<cmd>Cs f g<cr>")
 --
+-- vim.keymap.set("x", "<leader>tit", wrap_latex("textit"), { desc = "LaTeX \\textit{}" })
+-- vim.keymap.set("x", "<leader>ttt", wrap_latex("texttt"), { desc = "LaTeX \\texttt{}" })
+-- vim.keymap.set("x", "<leader>tbf", wrap_latex("textbf"), { desc = "LaTeX \\textbf{}" })
